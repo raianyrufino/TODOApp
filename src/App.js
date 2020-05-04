@@ -1,17 +1,19 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import Tabela from './Tabela';
 
 import "./styles.css";
 
 import Header from './components/Header/index';
 
-const App = () => (
-  <div className="App">
-    <Header/>
-  </div>
-);
+function App() {
+  return (
+    <div className="App">
+      <Header/>
+    </div>
+  );
 
+}
 // function App() {
 
 //     const autores =  [
