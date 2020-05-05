@@ -1,0 +1,16 @@
+#tableHead{
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#item{
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 10px; 
+    background-color: tomato;
+}
+.item{
+    border: 1px solid black ;
+    border-style: ridge;
+}
