@@ -17,7 +17,6 @@ export default function Checkboxes(props) {
         checked={checked}
         onClick={props.FuncaoPai}
         onChange={handleChange}
-        
       />
     </div>
   );

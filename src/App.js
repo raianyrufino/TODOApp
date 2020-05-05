@@ -7,6 +7,7 @@ import "./styles.css";
 import Header from './components/Header/index';
 import Tabela from './components/Tabela/index';
 import Checkboxes from './components/Check/index';
+import Input from './components/Input/index';
 
 function App() {
 
@@ -31,8 +32,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Tabela autores = { autores }/>
+      
+      Adicione um novo item a lista
+      <Input/>
 
+      <Tabela autores = { autores }/>
     </div>
   );
 
