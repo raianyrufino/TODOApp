@@ -1,6 +1,4 @@
 import React from 'react';
-// import './App.css';
-// import Tabela from './Tabela';
 
 import "./styles.css";
 
@@ -10,36 +8,16 @@ import Checkboxes from './components/Check/index';
 import Input from './components/Input/index';
 
 function App() {
-
-  const autores =  [
-    {
-      item: 'arroz',
-      quantidade: '1',
-      preco: '6.50'
-    },
-    {
-      item: 'feijao',
-      quantidade: '3',
-      preco: '10.0'
-    },
-    {
-      item: 'suco de uva',
-      quantidade: '1',
-      preco: '11.0'
-    }
-  ];
-
-  return (
+   return (
     <div className="App">
       <Header/>
       
       Adicione um novo item a lista
       <Input/>
 
-      <Tabela autores = { autores }/>
+      <Tabela/>
     </div>
   );
-
 }
 
 export default App;

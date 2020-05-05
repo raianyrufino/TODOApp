@@ -1,10 +1,10 @@
-#tableHead{
+.tabela{
+    background-color: white;
     color: #000000;
     font-size: 18px;
     font-weight: bold;
-    
 }
-
+/* 
 #item{
     color: #ffffff;
     font-style: normal;
@@ -28,4 +28,4 @@
 .button-quantidade:hover{
     color: white;
     background-color: black; 
-}
+} */

@@ -3,31 +3,24 @@ import React, {Component} from 'react';
 import "./styles.css";
 
 const Button = props => {
-    const [incrementa, setIncrementa, decrementa, setDecrementa] = React.useState()
+    // const [incrementa, setIncrementa, decrementa, setDecrementa] = React.useState()
 
-    numero = 0;
-
-    function decrementa() {
-    numero--;
-    setDecrementa(numero);
-    }
-
-    function incrementa() {
-    numero++;
-    setIncrementa(numero);
-    }
-
-    // function setValue(value) {
-    // document.getElementById('num').value = value;
+    // const handleChangeQuantidadeLess = e => {
+    //     setDecrementa(e.target.value-1);
     // }
 
-    // setValue(numero);
-
-    // const handleChangeValue = e => {
-    //     setItem(e.target.value)
+    // const handleChangeQuantidadeMore = e => {
+    //     setIncrementa(e.target.value+1);
     // }
 
-    // const handleChangeDecrementa = e => {
-    //     setItem(e.target.value)
-    // }
+    return (
+        <div>
+          <Button      
+            onClick={props.FuncaoPai}
+            //onChange={handleChangeQuantidadeLess}
+          />
+        </div>
+      );
 }
+
+export default Button;

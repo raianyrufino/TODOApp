@@ -9,15 +9,7 @@ const Form = props => {
     const handleChangeItem = e => {
       setItem(e.target.value)
     }
-
-    // const handleChangeQuantidade = q => {
-    //     setQuantidade(q.target.value)
-    // }
-  
-    // const handleChangePreco = p => {
-    //     setPreco(p.target.value)
-    // }
-
+    
     const handleSubmit = event => {
       alert(item)
       event.preventDefault()
