@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import "./styles.css";
+import { Input } from '@material-ui/core';
 
 const Tabela = () => {
     const itens = [
@@ -40,6 +41,17 @@ const Tabela = () => {
         setLista(resposta);
         console.log(resposta, lista);
     }
+    
+    const [item, setItem] = useState('12');
+
+    const Adicionar = () =>{
+        const novo_item = {id: lista.length+1,
+                    status: false,
+                    nome: item,
+                    quantidade: '3',
+                    preco: '10.0' }
+        setLista([...lista, novo_item]);
+    }
   
     return (
         <div class="tabela">
@@ -51,6 +63,7 @@ const Tabela = () => {
                     onClick = { () => { riscar(item.id) } }> {item.nome} 
                 </li>  
             ))}
+            <input id='teste' onChange={(e)=>{setItem(e.target.value)}} type='text' value={item}/><button onClick={Adicionar}>Adicionar</button>
         </div>
     );
 }

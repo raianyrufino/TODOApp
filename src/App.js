@@ -13,7 +13,7 @@ function App() {
       <Header/>
       
       Adicione um novo item a lista
-      <Input/>
+      {/* <Input/> */}
 
       <Tabela/>
     </div>
