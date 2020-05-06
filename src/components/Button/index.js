@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import "./styles.css";
 
-const Button = props => {
+const Button = (props) => {
     // const [incrementa, setIncrementa, decrementa, setDecrementa] = React.useState()
 
     // const handleChangeQuantidadeLess = e => {

@@ -32,7 +32,7 @@ const Tabela = () => {
     const riscar = (id) => {
         const resposta = lista.map(item => {
         if(item.id === id){
-            item.status = true;
+            item.status = !item.status;
         } 
         return item;
         });
