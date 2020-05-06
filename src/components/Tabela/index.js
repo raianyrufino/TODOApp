@@ -60,9 +60,11 @@ const Tabela = () => {
         const atribuirPreco = lista.map(item => {
              if(item.id === id){
                 item.preco = preco;
-                setPreco(preco);
+                // setPreco(preco);
              }
+             return item;
          });
+         setLista(atribuirPreco);
     }
     
     /* Quantificadores do botão de item */
@@ -98,7 +100,7 @@ const Tabela = () => {
                     <button onClick={ () => { quantificarMore(item.id) }}>+</button>
                     
                     {item.preco}
-                    <input onChange={ (p) => { setPreco(p.target.value) } } type='text'/>
+                    <input onChange={ (e) => { setPreco(e.target.value) } } type='text'/>
                     <button onClick={ () => { AdicionarPreco(item.id) } }>Preço</button>
 
                     <input type="checkbox" onClick = { () => { riscar(item.id) } }/>
