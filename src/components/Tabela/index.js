@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import "./styles.css";
-import { Input } from '@material-ui/core';
 
 const Tabela = () => {
     const itens = [
@@ -29,7 +28,11 @@ const Tabela = () => {
     ];
     
     const[lista, setLista] = useState(itens);
+    const [item, setItem] = useState('');
+    const [preco, setPreco] = useState('');
+    const [numero, setNumero] = useState(0);
 
+    /* Riscar um item marcado */
     const riscar = (id) => {
         const resposta = lista.map(item => {
         if(item.id === id){
@@ -41,22 +44,30 @@ const Tabela = () => {
         setLista(resposta);
         console.log(resposta, lista);
     }
-    
-    const [item, setItem] = useState('12');
 
+    /* Adicionar um novo item na lista */
     const Adicionar = () =>{
         const novo_item = {id: lista.length+1,
                     status: false,
                     nome: item,
                     quantidade: '0',
-                    preco: '10.0' }
+                    preco: '0.0' }
         setLista([...lista, novo_item]);
     }
-    
-    const [numero, setNumero] = useState(0);
 
+    /* Adicionar preço a um item na lista */
+    const AdicionarPreco = (id) => {
+        const atribuirPreco = lista.map(item => {
+             if(item.id === id){
+                item.preco = preco;
+                setPreco(preco);
+             }
+         });
+    }
+    
+    /* Quantificadores do botão de item */
     const quantificarLess = (id) => {
-        const resposta = lista.map(item => {
+        const decrementar = lista.map(item => {
             if(item.id === id){
                 item.quantidade = numero - 1;
                 setNumero(numero-1);
@@ -65,7 +76,7 @@ const Tabela = () => {
     }
 
     const quantificarMore = (id) => {
-        const resposta = lista.map(item => {
+        const incrementar = lista.map(item => {
             if(item.id === id){
                 item.quantidade = numero + 1;
                 setNumero(numero+1);
@@ -80,13 +91,22 @@ const Tabela = () => {
                     key = {item.id} 
                     style = {{textDecoration: item.status ? 'line-through' : '',
                             color: item.status ? 'green' : 'red'}} 
-                    onClick = { () => { riscar(item.id) } }> {item.nome} 
-                    <button onClick={() => { quantificarLess(item.id) } }>-</button>
+                    > {item.nome}
+                    
+                    <button onClick={ () => { quantificarLess(item.id) } }>-</button>
                     {item.quantidade}
-                    <button onClick={() => { quantificarMore(item.id) }}>+</button>
+                    <button onClick={ () => { quantificarMore(item.id) }}>+</button>
+                    
+                    {item.preco}
+                    <input onChange={ (p) => { setPreco(p.target.value) } } type='text'/>
+                    <button onClick={ () => { AdicionarPreco(item.id) } }>Preço</button>
+
+                    <input type="checkbox" onClick = { () => { riscar(item.id) } }/>
                 </li>  
+                
             ))}
-            <input id='teste' onChange={(e)=>{setItem(e.target.value)}} type='text' value={item}/><button onClick={Adicionar}>Adicionar</button>
+            <input id='teste' onChange={ (e) => { setItem(e.target.value) }} type='text'/>
+            <button onClick={Adicionar}>Adicionar Item</button>
         </div>
     );
 }
