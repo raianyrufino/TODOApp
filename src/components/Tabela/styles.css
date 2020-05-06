@@ -4,6 +4,43 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.tabela .lista{
+    margin-top: 50px;
+    margin-left: 70px;
+    margin-right: 70px;
+    border: 2px solid teal;
+    border-style: dotted;
+    padding: 50px 0px 50px 0px;
+    padding-left: 30%; 
+}
+
+.tabela .adicionarItem{
+    margin-top: 50px;
+    margin-inline: 10px;
+    margin-left: 40%;
+    width: 200px;
+}
+
+.tabela .lista .quantificador{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tabela .lista .input{
+    margin-left: 10px;
+    width: 60px;
+}
+
+.tabela .lista .preco{
+    margin-left: 10px;
+    width: 60px;
+}
+
+.tabela .lista .checkbox{
+    margin-left: 20px;
+    margin-right: 10px;
+}
 /* 
 #item{
     color: #ffffff;

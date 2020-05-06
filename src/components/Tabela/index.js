@@ -8,21 +8,21 @@ const Tabela = () => {
           id: 0,
           status: false,
           nome: 'arroz',
-          quantidade: '1',
+          quantidade: 3,
           preco: '6.50'
         },
         {
           id: 1,
           status: false,
           nome: 'feijao',
-          quantidade: '3',
+          quantidade: 2,
           preco: '10.0'
         },
         {
           id: 2,
           status: false,
           nome: 'suco de uva',
-          quantidade: '1',
+          quantidade: 0,
           preco: '11.0'
         }
     ];
@@ -60,7 +60,6 @@ const Tabela = () => {
         const atribuirPreco = lista.map(item => {
              if(item.id === id){
                 item.preco = preco;
-                // setPreco(preco);
              }
              return item;
          });
@@ -71,44 +70,49 @@ const Tabela = () => {
     const quantificarLess = (id) => {
         const decrementar = lista.map(item => {
             if(item.id === id){
-                item.quantidade = numero - 1;
-                setNumero(numero-1);
+                item.quantidade = item.quantidade - 1;
             }
+            return item;
         });
+        setLista(decrementar);
     }
 
     const quantificarMore = (id) => {
         const incrementar = lista.map(item => {
             if(item.id === id){
-                item.quantidade = numero + 1;
-                setNumero(numero+1);
+                item.quantidade = item.quantidade + 1;
             }
+            return item;
         });
+        setLista(incrementar);
     }
 
     return (
         <div class="tabela">
-            {lista.map((item)=>(
-                <li 
-                    key = {item.id} 
-                    style = {{textDecoration: item.status ? 'line-through' : '',
-                            color: item.status ? 'green' : 'red'}} 
-                    > {item.nome}
-                    
-                    <button onClick={ () => { quantificarLess(item.id) } }>-</button>
-                    {item.quantidade}
-                    <button onClick={ () => { quantificarMore(item.id) }}>+</button>
-                    
-                    {item.preco}
-                    <input onChange={ (e) => { setPreco(e.target.value) } } type='text'/>
-                    <button onClick={ () => { AdicionarPreco(item.id) } }>Preço</button>
+            
+            <input class="adicionarItem" id='teste' onChange={ (e) => { setItem(e.target.value) }} type='text'/>
+            <button onClick={Adicionar}>+ Item</button>
 
-                    <input type="checkbox" onClick = { () => { riscar(item.id) } }/>
-                </li>  
-                
-            ))}
-            <input id='teste' onChange={ (e) => { setItem(e.target.value) }} type='text'/>
-            <button onClick={Adicionar}>Adicionar Item</button>
+            <div class = "lista">
+                {lista.map((item)=>(
+                    <li key = {item.id} 
+                        style = {{textDecoration: item.status ? 'line-through' : '',
+                                color: item.status ? 'green' : 'red'}}> 
+
+                        {item.nome}
+
+                        <button class = "quantificador" onClick={ () => { quantificarLess(item.id) } }>-</button>
+                        {item.quantidade}
+                        <button class = "quantificador" onClick={ () => { quantificarMore(item.id) }}>+</button>
+                        
+                        {item.preco}
+                        <input class="input" onChange={ (e) => { setPreco(e.target.value) } } type='text'/>
+                        <button onClick={ () => { AdicionarPreco(item.id) } }>$$</button>
+
+                        <input class="checkbox" type="checkbox" onClick = { () => { riscar(item.id) } }/>
+                    </li>  
+                ))}
+            </div>
         </div>
     );
 }
