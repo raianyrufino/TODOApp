@@ -21,7 +21,7 @@ const Tabela = () => {
         {
           id: 2,
           status: false,
-          nome: 'sucos',
+          nome: 'suco de uva',
           quantidade: 0,
           preco: '11.0'
         }
@@ -98,10 +98,11 @@ const Tabela = () => {
 
             <div class="lista">
                 {lista.map((item)=>(
-                    <tr key = {item.id} 
+                    
+                    <tr key = {item.id} class="item"
                         style = {{textDecoration: item.status ? 'line-through' : '',
                                 color: item.status ? 'green' : 'red'}}> 
-                         
+                        
                         <td>
                             {item.nome}
                         </td>
