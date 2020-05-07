@@ -101,7 +101,7 @@ const Tabela = () => {
                     
                     <tr key = {item.id} class="item"
                         style = {{textDecoration: item.status ? 'line-through' : '',
-                                color: item.status ? 'green' : 'red'}}> 
+                                color: item.status ? 'green' : 'darkred'}}> 
                         
                         <td>
                             {item.nome}
