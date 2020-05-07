@@ -50,7 +50,7 @@ const Tabela = () => {
         const novo_item = {id: lista.length+1,
                     status: false,
                     nome: item,
-                    quantidade: '0',
+                    quantidade: 0,
                     preco: '0.0' }
         setLista([...lista, novo_item]);
     }
@@ -93,19 +93,20 @@ const Tabela = () => {
             <input class="adicionarItem" id='teste' onChange={ (e) => { setItem(e.target.value) }} type='text'/>
             <button onClick={Adicionar}>+ Item</button>
 
-            <div class = "lista">
+            <div class="lista">
                 {lista.map((item)=>(
                     <li key = {item.id} 
                         style = {{textDecoration: item.status ? 'line-through' : '',
                                 color: item.status ? 'green' : 'red'}}> 
-
-                        {item.nome}
+                         
+                        {item.nome} 
 
                         <button class = "quantificador" onClick={ () => { quantificarLess(item.id) } }>-</button>
                         {item.quantidade}
                         <button class = "quantificador" onClick={ () => { quantificarMore(item.id) }}>+</button>
                         
                         {item.preco}
+                        
                         <input class="input" onChange={ (e) => { setPreco(e.target.value) } } type='text'/>
                         <button onClick={ () => { AdicionarPreco(item.id) } }>$$</button>
 
