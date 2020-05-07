@@ -4,7 +4,6 @@ import "./styles.css";
 
 import Header from './components/Header/index';
 import Tabela from './components/Tabela/index';
-import Checkboxes from './components/Check/index';
 
 function App() {
    return (
